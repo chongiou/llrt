@@ -31,3 +31,23 @@ CXX_x86_64_apple_darwin = "/usr/bin/clang"
 
 [unstable]
 build-std = ["core", "compiler_builtins", "alloc", "std", "panic_abort"]
+
+[target.aarch64-linux-android.env]
+ANDROID_ABI = "arm64-v8a"
+ANDROID_PLATFORM = "android-24"
+
+CC = "/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang"
+CXX = "/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang++"
+AR = "/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar"
+CFLAGS = "-march=armv8-a"
+CXXFLAGS = "-march=armv8-a"
+
+# cmake 需要这些
+CMAKE_C_COMPILER = "/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang"
+CMAKE_CXX_COMPILER = "/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang++"
+CMAKE_SYSTEM_NAME = "Android"
+CMAKE_SYSTEM_VERSION = "24"
+CMAKE_ANDROID_ARCH_ABI = "arm64-v8a"
+CMAKE_TOOLCHAIN_FILE = "/home/vhxnyu/android-ndk-r27c/build/cmake/android.toolchain.cmake"
+
+BINDGEN_EXTRA_CLANG_ARGS = "--target=aarch64-linux-android24 --sysroot=/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -I/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -I/home/vhxnyu/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android -D__ANDROID_API__=24"

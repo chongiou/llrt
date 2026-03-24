@@ -59,3 +59,6 @@ panic = "abort"
 
 [profile.test]
 opt-level = 3
+
+[patch.crates-io]
+libz-ng-sys = { path = "./patches/libz-ng-sys" }

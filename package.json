@@ -11,6 +11,8 @@
     "singleQuote": false
   },
   "scripts": {
+    "build": "make js",
+    "build:target-android-arm64": "cargo build --target aarch64-linux-android --release",
     "esbuild": "esbuild",
     "update": "yarn upgrade-interactive --latest",
     "reinstall": "rm -rf yarn.lock && rm -rf node_modules && yarn",
